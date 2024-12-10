@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Lato";
+    src: url("~/assets/fonts/Lato-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("~/assets/fonts/Lato-Light.ttf") format("truetype");
+    font-weight: 300; /* or light */
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("~/assets/fonts/Lato-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Graffiti";
+    src: url("~/assets/fonts/Graffiti City.otf");
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Oswald";
+    src: url("~/assets/fonts/Oswald-VariableFont_wght.ttf");
+    font-display: swap;
+}
+.graffiti {
+    font-family: Graffiti, sans-serif;
+}
+.oswald {
+    font-family: Oswald, sans-serif;
+}
+* {
+    color: white;
+    font-family: Lato, sans-serif;
+}
+.container {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+}
+html,
+body {
+    background-color: #141414;
+}
+.glow-hover {
+    filter: drop-shadow(0 0 18px rgba(255, 0, 128, 0));
+    transition: 0.25s ease-in-out;
+}
+.glow-hover:hover {
+    filter: drop-shadow(0 0 18px rgba(255, 0, 128, 0.6));
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+/* width */
+.scrollbar::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+    background: #141414;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #252525;
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(34, 34, 34);
+}
