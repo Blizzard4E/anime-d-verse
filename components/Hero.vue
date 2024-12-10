@@ -40,7 +40,9 @@
                         v-if="i != 0"
                         class="bg-gray-400 w-[5px] h-[5px] rounded-full"
                     ></span>
-                    <span class="font-bold text-[20px]">{{ genre.title }}</span>
+                    <span class="font-normal text-[20px]">{{
+                        genre.title
+                    }}</span>
                 </li>
             </ul>
             <p
