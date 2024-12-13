@@ -1,5 +1,5 @@
 export const heroAnimeData: Anime = {
-    _id: "6481cf12e7b8a9c2c9f1b124",
+    _id: "0",
     title: "Demon Slayer: Kimetsu no Yaiba",
     posterUrl:
         "https://m.media-amazon.com/images/I/81jH5-U+1wL._AC_UF894,1000_QL80_.jpg",
@@ -36,16 +36,35 @@ export const heroAnimeData: Anime = {
     releaseDate: "2019-04-06T00:00:00Z",
     episodes: [
         {
-            _id: "301",
+            _id: "0",
             title: "Cruelty",
             episodeNumber: "1",
             videoUrl: "vid001",
+            thumbnailUrl: "/fake/7.webp",
             duration: 1440, // 24 minutes in seconds
             createdAt: "2019-04-06T12:00:00Z",
             updatedAt: "2019-04-06T12:00:00Z",
         },
         {
-            _id: "302",
+            _id: "1",
+            title: "Trainer Sakonji Urokodaki",
+            episodeNumber: "2",
+            videoUrl: "vid002",
+            duration: 1440,
+            createdAt: "2019-04-13T12:00:00Z",
+            updatedAt: "2019-04-13T12:00:00Z",
+        },
+        {
+            _id: "2",
+            title: "Trainer Sakonji Urokodaki",
+            episodeNumber: "2",
+            videoUrl: "vid002",
+            duration: 1440,
+            createdAt: "2019-04-13T12:00:00Z",
+            updatedAt: "2019-04-13T12:00:00Z",
+        },
+        {
+            _id: "3",
             title: "Trainer Sakonji Urokodaki",
             episodeNumber: "2",
             videoUrl: "vid002",
@@ -61,7 +80,105 @@ export const heroAnimeData: Anime = {
 };
 export const fakeDataList: Anime[] = [
     {
-        _id: "anime_1",
+        _id: "0",
+        title: "Demon Slayer: Kimetsu no Yaiba",
+        posterUrl:
+            "https://m.media-amazon.com/images/I/81jH5-U+1wL._AC_UF894,1000_QL80_.jpg",
+        coverUrl: "/fake/0.webp",
+        logoUrl: "/fake/1.webp",
+        genres: [
+            {
+                _id: "101",
+                title: "Supernatural",
+                createdAt: "2024-01-01T12:00:00Z",
+                updatedAt: "2024-01-10T12:00:00Z",
+            },
+            {
+                _id: "102",
+                title: "Action",
+                createdAt: "2024-01-01T12:00:00Z",
+                updatedAt: "2024-01-10T12:00:00Z",
+            },
+            {
+                _id: "103",
+                title: "Award Winning",
+                createdAt: "2024-01-01T12:00:00Z",
+                updatedAt: "2024-01-10T12:00:00Z",
+            },
+        ],
+        studio: {
+            _id: "201",
+            title: "ufotable",
+            createdAt: "2024-01-01T12:00:00Z",
+            updatedAt: "2024-01-10T12:00:00Z",
+        },
+        description:
+            "Join Tanjiro on an epic quest in Demon Slayer: Kimetsu no Yaiba! Witness breathtaking battles, heartwarming bonds, and the fight against darkness in a stunning Taisho-era world. Stream now and immerse yourself in this anime phenomenon!",
+        releaseDate: "2019-04-06T00:00:00Z",
+        episodes: [
+            {
+                _id: "301",
+                title: "Cruelty",
+                episodeNumber: "1",
+                thumbnailUrl: "/fake/7.webp",
+                videoUrl: "/fake/0.mp4",
+                duration: 1440, // 24 minutes in seconds
+                createdAt: "2019-04-06T12:00:00Z",
+                updatedAt: "2019-04-06T12:00:00Z",
+            },
+            {
+                _id: "302",
+                title: "Trainer Sakonji Urokodaki",
+                episodeNumber: "2",
+                videoUrl: "vid002",
+                duration: 1440,
+                createdAt: "2019-04-13T12:00:00Z",
+                updatedAt: "2019-04-13T12:00:00Z",
+            },
+            {
+                _id: "2",
+                title: "Trainer Sakonji Urokodaki",
+                episodeNumber: "2",
+                videoUrl: "vid002",
+                duration: 1440,
+                createdAt: "2019-04-13T12:00:00Z",
+                updatedAt: "2019-04-13T12:00:00Z",
+            },
+            {
+                _id: "3",
+                title: "Trainer Sakonji Urokodaki",
+                episodeNumber: "2",
+                videoUrl: "vid002",
+                duration: 1440,
+                createdAt: "2019-04-13T12:00:00Z",
+                updatedAt: "2019-04-13T12:00:00Z",
+            },
+            {
+                _id: "2",
+                title: "Trainer Sakonji Urokodaki",
+                episodeNumber: "2",
+                videoUrl: "vid002",
+                duration: 1440,
+                createdAt: "2019-04-13T12:00:00Z",
+                updatedAt: "2019-04-13T12:00:00Z",
+            },
+            {
+                _id: "3",
+                title: "Trainer Sakonji Urokodaki",
+                episodeNumber: "2",
+                videoUrl: "vid002",
+                duration: 1440,
+                createdAt: "2019-04-13T12:00:00Z",
+                updatedAt: "2019-04-13T12:00:00Z",
+            },
+        ],
+        trailerUrl: "https://example.com/demon-slayer-trailer.mp4",
+        status: "completed",
+        createdAt: "2019-04-01T12:00:00Z",
+        updatedAt: "2024-12-06T12:00:00Z",
+    },
+    {
+        _id: "1",
         title: "Dandandan",
         posterUrl: "/fake/2.webp",
         coverUrl: "https://example.com/demon-slayer-cover.jpg",
@@ -106,7 +223,7 @@ export const fakeDataList: Anime[] = [
         updatedAt: "2022-01-01",
     },
     {
-        _id: "anime_2",
+        _id: "2",
         title: "Frieren: Beyond Journey's End",
         posterUrl: "/fake/3.webp",
         coverUrl: "https://example.com/attack-on-titan-cover.jpg",
@@ -151,7 +268,7 @@ export const fakeDataList: Anime[] = [
         updatedAt: "2022-01-01",
     },
     {
-        _id: "anime_3",
+        _id: "3",
         title: "Delicious in Dungeon",
         posterUrl: "/fake/4.webp",
         coverUrl: "https://example.com/one-piece-cover.jpg",
@@ -196,7 +313,7 @@ export const fakeDataList: Anime[] = [
         updatedAt: "2022-01-01",
     },
     {
-        _id: "anime_4",
+        _id: "4",
         title: "Kaiju no. 8",
         posterUrl: "/fake/5.webp",
         coverUrl: "https://example.com/my-hero-academia-cover.jpg",
@@ -241,7 +358,7 @@ export const fakeDataList: Anime[] = [
         updatedAt: "2022-01-01",
     },
     {
-        _id: "anime_5",
+        _id: "5",
         title: "Solo Leveling",
         posterUrl: "/fake/6.webp",
         coverUrl: "https://example.com/death-note-cover.jpg",

@@ -30,6 +30,7 @@ export type Episode = {
     _id: string;
     title: string;
     episodeNumber: string;
+    thumbnailUrl?: string;
     videoUrl: string;
     duration: number;
     createdAt: string;
