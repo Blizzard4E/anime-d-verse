@@ -121,7 +121,8 @@ export const fakeDataList: Anime[] = [
                 title: "Cruelty",
                 episodeNumber: "1",
                 thumbnailUrl: "/fake/7.webp",
-                videoUrl: "/fake/0.mp4",
+                videoUrl:
+                    "https://res.cloudinary.com/duzvevuup/video/upload/v1725511724/ZZZ/Qingyi_Basic_Attack_qhizbl.mp4",
                 duration: 1440, // 24 minutes in seconds
                 createdAt: "2019-04-06T12:00:00Z",
                 updatedAt: "2019-04-06T12:00:00Z",
