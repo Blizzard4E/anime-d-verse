@@ -9,8 +9,12 @@
             class="absolute top-0 left-0 w-[360px] h-[200px] group-hover:scale-110 duration-[.25s] z-0"
             :style="{
                 background: `linear-gradient(to top ,rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 70%), url(${
-                    anime.episodes[episodeNumber - 1].thumbnailUrl ??
-                    anime.coverUrl
+                    runtimeConfig.public.apiURL +
+                    '/' +
+                    convertPathSlashes(
+                        anime.episodes[episodeNumber - 1].thumbnailUrl ??
+                            anime.coverUrl
+                    )
                 })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -28,6 +32,8 @@
 </template>
 
 <script lang="ts" setup>
+const runtimeConfig = useRuntimeConfig();
+
 defineProps<{
     anime: Anime;
     episodeNumber: number;

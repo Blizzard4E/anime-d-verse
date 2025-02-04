@@ -3,6 +3,7 @@ export interface Episode {
     _id: string;
     title: string;
     episodeNumber: string;
+    thumbnailUrl: string;
     videoUrl: string;
     animeId: string;
     createdAt: string;
