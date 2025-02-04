@@ -8,7 +8,11 @@
         <div
             class="absolute top-0 left-0 w-[270px] h-[360px] group-hover:scale-110 duration-[.25s] z-0"
             :style="{
-                background: `linear-gradient(to top ,rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 40%), url(${anime.posterUrl})`,
+                background: `linear-gradient(to top ,rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 40%), url(${
+                    runtimeConfig.public.apiURL +
+                    '/' +
+                    convertPathSlashes(anime.posterUrl)
+                })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -24,6 +28,7 @@
 </template>
 
 <script lang="ts" setup>
+const runtimeConfig = useRuntimeConfig();
 defineProps<{
     anime: Anime;
 }>();

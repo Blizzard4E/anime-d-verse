@@ -1,21 +1,27 @@
 <template>
     <div class="flex flex-col gap-4">
-        <div class="grid grid-cols-3 gap-[32px]">
+        <div class="grid grid-cols-3 gap-[32px]" v-if="animesData">
             <div class="flex flex-col gap-4 col-span-2">
                 <h1 class="text-[32px] font-bold">
                     EP {{ episodeNumber }} -
-                    {{ anime.episodes[episodeNumber].title }}
+                    {{ animesData.episodes[episodeNumber - 1].title }}
                 </h1>
                 <video
                     class="col-span-2"
-                    :src="anime.episodes[episodeNumber - 1].videoUrl"
+                    :src="
+                        runtimeConfig.public.apiURL +
+                        '/' +
+                        convertPathSlashes(
+                            animesData.episodes[episodeNumber - 1].videoUrl
+                        )
+                    "
                     controls
                 />
-                <Hero :anime="anime" />
+                <Hero :anime="animesData" />
             </div>
             <div class="flex flex-col gap-4">
                 <h2 class="text-[20px] font-bold">Other Episodes:</h2>
-                <Episodes :anime="anime" />
+                <Episodes :anime="animesData" />
             </div>
         </div>
     </div>
@@ -23,9 +29,15 @@
 
 <script lang="ts" setup>
 const route = useRoute();
-console.log(route.params);
+const runtimeConfig = useRuntimeConfig();
 
-const anime = fakeDataList[Number(route.params.id)];
+const {
+    data: animesData,
+    status: animesStatus,
+    refresh: animesRefresh,
+} = await useFetch<Anime>(
+    `${runtimeConfig.public.apiURL}/anime/${route.params.id}`
+);
 const episodeNumber = Number(route.params.number);
 </script>
 

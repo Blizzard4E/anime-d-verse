@@ -9,7 +9,11 @@
         <div
             class="absolute top-0 left-0 w-full h-[480px] group-hover:scale-110 duration-[.25s]"
             :style="{
-                background: `linear-gradient(to right ,rgba(20, 20, 20, 1) 22%, rgba(20, 20, 20, 0) 100%), url(${anime.coverUrl})`,
+                background: `linear-gradient(to right ,rgba(20, 20, 20, 1) 22%, rgba(20, 20, 20, 0) 100%), url(${
+                    runtimeConfig.public.apiURL +
+                    '/' +
+                    convertPathSlashes(anime.coverUrl)
+                })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -22,7 +26,7 @@
             :href="`/anime/${anime._id}`"
         >
             <img
-                :src="anime.logoUrl"
+                :src="runtimeConfig.public.apiURL + '/' + anime.logoUrl"
                 class="w-auto h-[200px] self-start"
                 alt="Logo"
             />
@@ -55,9 +59,13 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const runtimeConfig = useRuntimeConfig();
+
+const props = defineProps<{
     anime: Anime;
 }>();
+
+console.log(runtimeConfig.public.apiURL + "/" + props.anime.logoUrl);
 </script>
 
 <style></style>
