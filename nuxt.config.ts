@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devServer: {
-        port: 8000,
+        port: 25565,
     },
     css: ["~/assets/css/main.css"],
     modules: ["@nuxtjs/tailwindcss"],

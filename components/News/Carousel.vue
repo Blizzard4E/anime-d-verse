@@ -1,14 +1,14 @@
 <template>
     <ul class="flex gap-[42px] pb-4 mb-6 w-full overflow-auto scrollbar">
-        <a v-for="anime in list" :href="`anime/${anime._id}`" :key="anime._id">
-            <Card :anime="anime" />
+        <a v-for="news in list" :href="`news/${news.id}`" :key="news.id">
+            <NewsCard :news="news" />
         </a>
     </ul>
 </template>
 
 <script lang="ts" setup>
 defineProps<{
-    list: Anime[] | null;
+    list: News[] | null;
 }>();
 </script>
 

@@ -64,8 +64,6 @@ const runtimeConfig = useRuntimeConfig();
 const props = defineProps<{
     anime: Anime;
 }>();
-
-console.log(runtimeConfig.public.apiURL + "/" + props.anime.logoUrl);
 </script>
 
 <style></style>

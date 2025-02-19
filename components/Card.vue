@@ -20,7 +20,7 @@
             }"
         ></div>
         <h2
-            class="w-full h-[60px] text-[24px] font-bold px-4 leading-6 relative z-10"
+            class="bottom-8 w-full text-[24px] font-bold px-4 leading-6 relative z-10 line-clamp-2"
         >
             {{ anime.title }}
         </h2>
