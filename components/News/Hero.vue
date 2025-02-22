@@ -10,7 +10,10 @@
             :href="`news/${news.id}`"
             class="w-full group-hover:scale-110 duration-[.25s] z-0"
             :style="{
-                background: `linear-gradient(to top ,rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 40%), url(${news.cover_url})`,
+                background: `linear-gradient(to top ,rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 40%), url(${
+                    runtimeConfig.public.apiURL +
+                    convertPathSlashes(news.cover_image)
+                })`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -29,12 +32,12 @@
                     {{ news.title }}
                 </h2>
             </a>
-            <p
-                v-html="
-                    replaceNewlinesWithBr(news.content)
-                "
-                class="text-gray-400 w-full max-w-[600px] text-[20px] leading-5 line-clamp-6"
-            ></p>
+            <client-only>
+                <p
+                    v-html="news.content"
+                    class="text-gray-400 w-full max-w-[600px] text-[20px] leading-5 line-clamp-6"
+                ></p>
+            </client-only>
         </div>
     </div>
 </template>

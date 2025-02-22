@@ -57,7 +57,7 @@ export interface News {
     id: number;
     title: string;
     content: string;
-    cover_url: string;
+    cover_image: string;
     author: Author;
     created_at: string;
     updated_at: string;

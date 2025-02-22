@@ -1,7 +1,7 @@
 <template>
-    <div v-if="newsData">
+    <div>
         <div class="grid grid-cols-3 pb-8">
-            <div class="col-span-2 flex flex-col gap-6">
+            <div class="col-span-2 flex flex-col gap-6" v-if="newsData">
                 <h1 class="text-white w-full text-3xl font-bold line-clamp-4">
                     {{ newsData.title }}
                 </h1>
@@ -11,8 +11,14 @@
                         newsData.author.username
                     }}</span>
                 </h2>
-                <img class="w-full" :src="newsData.cover_url" alt="" />
-                <p class="text-lg" v-html="convertToBr(newsData.content)"></p>
+                <img
+                    class="w-full"
+                    :src="runtimeConfig.public.apiURL + newsData.cover_image"
+                    alt=""
+                />
+                <client-only>
+                    <p class="text-lg" v-html="newsData.content"></p>
+                </client-only>
             </div>
         </div>
     </div>
