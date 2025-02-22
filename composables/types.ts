@@ -93,3 +93,8 @@ export type UserState = {
 export type SessionResponse = {
     session_token: string;
 } | null;
+export type ContentResponse<T> = {
+    success: boolean;
+    message: string;
+    data: T;
+};

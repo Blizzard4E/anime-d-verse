@@ -4,7 +4,7 @@
             <div class="flex flex-col gap-4 col-span-2">
                 <h1 class="text-[32px] font-bold">
                     EP {{ episodeNumber }} -
-                    {{ animesData.episodes[episodeNumber - 1].title }}
+                    {{ animesData.data.episodes[episodeNumber - 1].title }}
                 </h1>
                 <video
                     class="col-span-2"
@@ -12,16 +12,16 @@
                         runtimeConfig.public.apiURL +
                         '/' +
                         convertPathSlashes(
-                            animesData.episodes[episodeNumber - 1].videoUrl
+                            animesData.data.episodes[episodeNumber - 1].videoUrl
                         )
                     "
                     controls
                 />
-                <Hero :anime="animesData" />
+                <Hero :anime="animesData.data" />
             </div>
             <div class="flex flex-col gap-4">
                 <h2 class="text-[20px] font-bold">Other Episodes:</h2>
-                <Episodes :anime="animesData" />
+                <Episodes :anime="animesData.data" />
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@ const {
     data: animesData,
     status: animesStatus,
     refresh: animesRefresh,
-} = await useFetch<Anime>(
+} = await useFetch<ContentResponse<Anime>>(
     `${runtimeConfig.public.apiURL}/anime/${route.params.id}`
 );
 const episodeNumber = Number(route.params.number);

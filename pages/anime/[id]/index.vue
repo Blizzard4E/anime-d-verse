@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-col gap-4" v-if="animesData">
-        <Hero :anime="animesData" />
+        <Hero :anime="animesData.data" />
         <h1 class="text-[32px] font-bold">Episodes</h1>
-        <Episodes :anime="animesData" />
+        <Episodes :anime="animesData.data" />
         <div class="flex justify-between">
             <h1 class="font-bold text-3xl">Discussion</h1>
             <client-only>
@@ -24,19 +24,19 @@ const {
     data: animesData,
     status: animesStatus,
     refresh: animesRefresh,
-} = await useFetch<Anime>(
+} = await useFetch<ContentResponse<Anime>>(
     `${runtimeConfig.public.apiURL}/anime/${route.params.id}`
 );
 const {
     data: threadsData,
     status: threadsStatus,
     refresh: threadsRefresh,
-} = await useFetch<Thread[]>(
+} = await useFetch<ContentResponse<Thread[]>>(
     `${runtimeConfig.public.apiURL}/threads/anime/${route.params.id}`
 );
 
 const reversedThreads = computed(() =>
-    threadsData.value ? [...threadsData.value].reverse() : []
+    threadsData.value ? [...threadsData.value.data].reverse() : []
 );
 </script>
 

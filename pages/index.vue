@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-col gap-4">
-        <Hero :anime="animesData[0]" v-if="animesData" />
+        <Hero :anime="animesData.data[0]" v-if="animesData" />
         <h1 class="font-bold text-[32px]">Latest Shows</h1>
-        <Carousel :list="animesData" />
+        <Carousel :list="animesData.data" v-if="animesData" />
     </div>
 </template>
 
@@ -13,7 +13,9 @@ const {
     data: animesData,
     status: animesStatus,
     refresh: animesRefresh,
-} = await useFetch<Anime[]>(`${runtimeConfig.public.apiURL}/anime`);
+} = await useFetch<ContentResponse<Anime[]>>(
+    `${runtimeConfig.public.apiURL}/anime`
+);
 </script>
 
 <style></style>
