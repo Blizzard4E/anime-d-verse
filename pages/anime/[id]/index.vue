@@ -31,12 +31,12 @@ const {
     data: threadsData,
     status: threadsStatus,
     refresh: threadsRefresh,
-} = await useFetch<ContentResponse<Thread[]>>(
+} = await useFetch<Thread[]>(
     `${runtimeConfig.public.apiURL}/threads/anime/${route.params.id}`
 );
 
 const reversedThreads = computed(() =>
-    threadsData.value ? [...threadsData.value.data].reverse() : []
+    threadsData.value ? [...threadsData.value].reverse() : []
 );
 </script>
 
